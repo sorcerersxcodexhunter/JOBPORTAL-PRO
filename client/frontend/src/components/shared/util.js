@@ -1,1 +1,1 @@
-export const user_api_key = "https://mern-jobportal-evw2.onrender.com";
+export const user_api_key = "https://mern-stack-1-jh1g.onrender.com";
