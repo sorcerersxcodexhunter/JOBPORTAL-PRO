@@ -20,14 +20,20 @@ const app = express();
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://jobportal-pro1234.onrender.com/browse"
+    ],
     credentials: true
   }
 });
 
 dotenv.config();
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://jobportal-pro1234.onrender.com/browse"
+  ],
   credentials: true
 }));
 app.use(morgan('dev'));
