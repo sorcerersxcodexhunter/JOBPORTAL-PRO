@@ -206,10 +206,17 @@ function ViewDetails() {
         formData.append('resume', profileData.resume);
       }
       
-      const response = await axios.put(`${user_api_key}/update-profile`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-        withCredentials: true
-      });
+      const response = await axios.put(
+  `${user_api_key}/update-profile`,
+  formData,
+  {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      Authorization: token,  // Include your Bearer token here
+    },
+    withCredentials: true
+  }
+);
       
       if (response.data.success) {
         toast.success('Profile updated successfully! 🎉');
