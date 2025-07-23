@@ -33,7 +33,7 @@ function Login() {
         });
         if (response.data.success ) {
           toast.success(response.data.message || "Login successful!");
-          localStorage.setItem('token', response.data.token);
+          // localStorage.setItem('token', response.data.token);
           
           dispatch(setUser(response.data.user));
           dispatch(loadingStatus(false));
