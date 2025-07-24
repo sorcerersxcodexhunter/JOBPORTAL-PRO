@@ -27,7 +27,7 @@ function ChatModel({ userId, otherUser, onClose }) {
 
   // Setup socket connection
   useEffect(() => {
-    socketRef.current = io('http://localhost:3000');
+    socketRef.current = io(`${user_api_key}`);
     console.log('[ChatModel] Connecting socket for userId:', userId);
     socketRef.current.emit('identify', userId);
     socketRef.current.on('message', (msg) => {
