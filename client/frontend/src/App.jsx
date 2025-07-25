@@ -17,6 +17,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import Chatbot from './components/shared/Chatbot.jsx';
 import Admin from './components/Admin.jsx';
 import ApplicationPage from './components/Applicationpage.jsx';
+import NotFound from './components/404.jsx';
 
 const approuts = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const approuts = createBrowserRouter([
       {
         path: "/admin",
         element: <Admin />
+      },
+      {
+        path: "/*",
+        element: <NotFound />
       }
     ]
   }
